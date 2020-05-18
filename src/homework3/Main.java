@@ -16,6 +16,11 @@ public class Main {
 		System.out.println(menu.getType());
 		System.out.println(menu.getCal());
 		System.out.println(menu.getRecipes().get(0).getName());
+		//MenuSetクラス
+		Menu menu1 = new Menu("鮭弁当", "和食", List.of(r1, r2));
+		MenuSet menuSet = new MenuSet(List.of(menu, menu1));
+		var menus = menuSet.getMenus();
+		System.out.println(menus);
 	}
 
 }
