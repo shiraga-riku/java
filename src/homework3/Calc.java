@@ -16,72 +16,73 @@ public class Calc {
 
 	}
 
-	interface Calculator {
+}
 
-		public int calculate(int x, int y);
+interface Calculator {
 
-		public static Calculator create(String op) {
+	public int calculate(int x, int y);
 
-			switch (op) {
+	public static Calculator create(String op) {
 
-			case "+":
-				return new Sum();
+		switch (op) {
 
-			case "-":
-				return new Minus();
+		case "+":
+			return new Sum();
 
-			case "m":
-				return new Multiple();
+		case "-":
+			return new Minus();
 
-			case "/":
-				return new Divide();
+		case "m":
+			return new Multiple();
 
-			default:
-				throw new IllegalArgumentException("不正な入力");
+		case "/":
+			return new Divide();
 
-			}
-
-		}
-
-	}
-
-	class Sum implements Calculator {
-
-		public int calculate(int x, int y) {
-
-			return x + y;
+		default:
+			throw new IllegalArgumentException("不正な入力");
 
 		}
 
 	}
 
-	class Minus implements Calculator {
+}
 
-		public int calculate(int x, int y) {
+class Sum implements Calculator {
 
-			return x - y;
+	public int calculate(int x, int y) {
 
-		}
-
-	}
-
-	class Multiple implements Calculator {
-
-		public int calculate(int x, int y) {
-
-			return x * y;
-
-		}
+		return x + y;
 
 	}
 
-	class Divide implements Calculator {
+}
 
-		public int calculate(int x, int y) {
+class Minus implements Calculator {
 
-			return x / y;
+	public int calculate(int x, int y) {
 
-		}
+		return x - y;
 
 	}
+
+}
+
+class Multiple implements Calculator {
+
+	public int calculate(int x, int y) {
+
+		return x * y;
+
+	}
+
+}
+
+class Divide implements Calculator {
+
+	public int calculate(int x, int y) {
+
+		return x / y;
+
+	}
+
 }
